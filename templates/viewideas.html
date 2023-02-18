@@ -1,0 +1,56 @@
+{% include 'includes/_navbar.html' %}
+{% include 'includes/_messages.html' %}
+{% include 'layout.html' %}
+{% block body %}
+    <section class="viewideas"><br><br>
+        <div class="row">
+            <div class="col-sm-9">
+              <div class="card">
+                <div class="card-body">
+                    <br><br>
+                    <h2 class="card-title">{{projects.title}}</h2>
+                    <h4 class="card-title">{{projects.subtitle}}</h4>
+                    <h4 class="card-title">{{projects.date}}</h4>
+                    <div style="width: 80%;  "> 
+                        <p class="card-text">{{projects.description}}</p>
+                    </div>
+                    <a href="/increasecount/{{projects.title}}" class="btn btn-primary"><i class="fa-solid fa-caret-up"></i> Upvote {{projects.upvote}}</a>
+                </div>
+              </div>
+            </div>
+            {% if session.logged_in %}
+            {% if session['role']=='investor' %}
+            <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body"><br><br>
+                    <div style="float: right;"><i class="fa-solid fa-user fa-4x"></i></div>
+                    <h4 class="card-title">  {{projects.author}}</h4>
+                    <a href="/sms/{{projects.author}}" class="btn btn-primary">Lets connect</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          <br>
+            <div class="card w-75">
+                <div class="card-body">
+                    <div class="card-text">Comments</div><br>
+                    {% for c in comments %}
+                        <div>{{ c.author }}</div>
+                        <div>{{ c.comment }}</div>
+                        <hr>
+                    {% endfor %}
+                </div> 
+            </div>
+            <br>
+            <form action="/comments" method="POST">
+                <div class="mb-2">
+                    <label for="exampleFormControlTextarea1" class="comment"></label>
+                    <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Add comment</button>
+            </form>
+            {% endif %}
+            
+    </section>
+{% endblock %}

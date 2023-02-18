@@ -1,0 +1,31 @@
+{% include 'includes/_navbar.html' %}
+{% include 'includes/_messages.html' %}
+{% include 'layout.html' %}
+{% block body %}
+    <section class="vh-100">
+      <br><br>
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form method="post">
+                <br><br>
+                <h2>Admin Login</h2><br>
+                <!-- Email input -->
+                <div class="col-12">
+                  <label for="inputEmail" class="form-label">Username</label>
+                  <input type="username" name="username" class="form-control" id="inputEmail" placeholder="">
+                </div>
+                <br>
+                <!-- Password input -->
+                <div class="col-12">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="inputPassword" placeholder="">
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}

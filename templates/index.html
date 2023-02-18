@@ -1,0 +1,375 @@
+
+{% include 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Start-hub</title>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                {% if session.logged_in %}
+                    <h1>Hello {{ session['name'] }}!</h1><br><br>
+                {% endif %}
+                    <h1>Welcome to Start-Hub, the startup support!</h1>
+                <!-- Icon Divider-->
+                <img class="img-fluid" src="../static/logo.png" width="200" height="250" alt="..." />
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Idea promotion - Mentorship support - Investment - Problem solving</p>
+            </div>
+        </header>
+        <br><br>
+        <section class="features-icons bg-light text-center">
+
+            <div class="container">
+                <br><br>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Enabling the growth of startups</h2>
+                
+                <br><br>
+                <div class="row">
+                <div class="col-lg-4">
+                  <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                    <img class="img-fluid" src="../static/idea.png" width="200" height="250" alt="..." />
+                    <h2 class="lead mb-0">500 Startup ideas</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                    <img class="img-fluid" src="../static/Invest.jpg"  width="320" height="50" alt="..." />
+                    <h2 class="lead mb-0">100+ Investments made!</h2>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                    <img  class="img-fluid"src="../static/regmentor.png"  width="320" height="50" alt="..." />
+                    <h2 class="lead mb-0">200 Registered Mentors</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- Stats Section-->
+        <section class="page-section Stats" id="Stats">
+            <div class="container">
+                <!-- Stats Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Our community startups</h2>
+                
+                <!-- Stats Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Stats Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal1">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/apna.png" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Stats Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal2">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/1mg.png" alt="..." />
+                            
+                        </div>
+                    </div>
+                    <!-- Stats Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal3">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/pinelabs.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Stats Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal4">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/progcap.png" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Stats Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal5">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/locus.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Stats Item 6-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="Stats-item mx-auto" data-bs-toggle="modal" data-bs-target="#StatsModal6">
+                            <div class="Stats-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="Stats-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../static/spinny.png" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">Start-Hub aims to create a common platform for aspiring entrepreneurs to pitch their ideas for promotion. Access to a group of experienced mentors in different disciplines is also provided.
+                    </p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">It facilitates various agencies to submit their problem statements  to find working solutions. It also provides a platform for investors for analyzing ideas of their interest to invest funds</p></div>
+                </div>
+               
+            </div>
+        </section>
+        <!-- Contact Section-->
+        
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 me-auto">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            2215 Banjara Hills
+                            <br />
+                            Hyderabad
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Your Website 2022</small></div>
+        </div>
+        <!-- Stats Modals-->
+        <!-- Stats Modal 1-->
+        <div class="Stats-modal modal fade" id="StatsModal1" tabindex="-1" aria-labelledby="StatsModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">Apna</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                    
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">Apna is a professional networking and job-search platform that connects blue- and gray-collar professionals with like-minded people and places to work.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Modal 2-->
+        <div class="Stats-modal modal fade" id="StatsModal2" tabindex="-1" aria-labelledby="StatsModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">1mg</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                    
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">1mg is a generic drug engine and online pharmacy network platform..</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Modal 3-->
+        <div class="Stats-modal modal fade" id="StatsModal3" tabindex="-1" aria-labelledby="StatsModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">Pinelabs</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                   
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">Pine Labs is a merchant commerce platform that offers merchants funding and technology for last-mile retail transactions.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Modal 4-->
+        <div class="Stats-modal modal fade" id="StatsModal4" tabindex="-1" aria-labelledby="StatsModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">Progcap</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                    
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">Progcap is a financial services firm that assists micro and small businesses with financing.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Modal 5-->
+        <div class="Stats-modal modal fade" id="StatsModal5" tabindex="-1" aria-labelledby="StatsModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">Locus</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                    
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">Locus is a logistics-focused intelligent decision-making and automation platform.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Stats Modal 6-->
+        <div class="Stats-modal modal fade" id="StatsModal6" tabindex="-1" aria-labelledby="StatsModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Stats Modal - Title-->
+                                    <h2 class="Stats-modal-title text-secondary text-uppercase mb-0">Spinny</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Stats Modal - Image-->
+                                    
+                                    <!-- Stats Modal - Text-->
+                                    <p class="mb-4">Spinny is a used automobile buying platform that makes transactions safe and simple.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

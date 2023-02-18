@@ -1,0 +1,6 @@
+<!-- templates/index.html --><html>  <head>    <title>Chat</title>  </head>  <body>    <h1>Chat</h1>    {% if messages %}
+    {% for item in messages %}
+    <p><b>{{ item[1] }}:</b> {{ item[2]}}</p>      {% endfor %}
+{% else %}
+  <p>No messages yet.</p>    {% endif %}
+<form method="post" action="{{ url_for('send_message') }}">      <input type="text" name="message">      <input type="submit" value="Send">    </form>    <a href="{{ url_for('logout') }}">Logout</a>  </body></html>
