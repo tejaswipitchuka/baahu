@@ -1,7 +1,29 @@
-{% include 'includes/_navbar.html' %}
 {% include 'includes/_messages.html' %}
 {% include 'layout.html' %}
 {% block body %}
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#login">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<body id="page-top">
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        {% if session.logged_in %}
+            <h1>Hello {{ session['name'] }}!</h1><br><br>
+        {% endif %}
+            <h1>Welcome to Start-Hub, the startup support!</h1>
+        <!-- Icon Divider-->
+        <img class="img-fluid" src="../static/logo.png" width="200" height="250" alt="..." />
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Idea promotion - Mentorship support - Investment - Problem solving</p>
+    </div>
+  </header>
+</body>
+
+<br><br>
     <section class="vh-100">
       <br><br>
         <div class="container-fluid h-custom">
@@ -10,7 +32,7 @@
               <img src="../static/login.png"
                 class="img-fluid" alt="Sample image">
             </div>
-            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <div id="login" class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
               <form method="post">
                 <br><br>
                 <h2>Login</h2><br>
@@ -25,7 +47,7 @@
                   <label for="inputPassword" class="form-label">Password</label>
                   <input type="password" name="password" class="form-control" id="inputPassword" placeholder="">
                 </div><br>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                   <label for="inputRole" class="form-label">Role</label>
                   <select id="inputRole" name="role" class="form-select">
                       <option value="innovator">Innovator</option>
@@ -33,12 +55,12 @@
                       <option value="mentor">Mentor</option>
                       <option value="organization">Organization</option>
               </select>
-              </div>
+              </div> -->
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button type="submit" class="btn btn-primary btn-lg"
                     style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
-                      class="link-danger">Register</a></p>
+                    <!-- <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register"
+                      class="link-danger">Register</a></p> -->
                 </div>
                 
 

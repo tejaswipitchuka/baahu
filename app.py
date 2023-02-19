@@ -6,20 +6,30 @@ from wtforms import Form, StringField, TextAreaField, PasswordField, FileField,S
 from passlib.hash import sha256_crypt
 from functools import wraps
 import os
-import mysql.connector
+# import mysql.connector
 from twilio.rest import Client
 
 app=Flask(__name__)
 
 # Connect to the database
-conn = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',
-    database='chat_app'
-)
+# conn = mysql.connector.connect(
+#     host='localhost',
+#     user='root',
+#     password='',
+#     database='chat_app'
+# )
 
-@app.route('/')
+#config MySQL
+app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_USER']='root'
+app.config['MYSQL_PASSWORD']=''
+app.config['MYSQL_DB']='chat_app'
+app.config['MYSQL_CURSORCLASS']='DictCursor'
+
+#init MySQL
+mysql=MySQL(app)
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 
@@ -28,7 +38,7 @@ class Login(Form):
     password=PasswordField('password',[validators.Length(min=5)])
 
 #user login
-@app.route('/login',methods=['POST','GET'])
+@app.route('/',methods=['POST','GET'])
 def login():    
     form=Login(request.form)
     if request.method=='POST':
@@ -42,11 +52,13 @@ def login():
             data=cur.fetchone()
             password=data['password']
             #compare passwords
-            if sha256_crypt.verify(password_input,password):
+            #if sha256_crypt.verify(password_input,password):
+            if password_input==password:
                 session['logged_in']=True
                 cur.execute("SELECT * FROM messages WHERE username='{emailid}'".format(emailid=email))
                 data=cur.fetchone()
                 session['username']=data['name']
+                session['role']=data['role']
                 # if(role=='investor' and data['status']=='no'):
                 #     error="Registration not confirmed"
                 return redirect(url_for('chat'))
@@ -68,7 +80,7 @@ def chat():
     if 'username' not in session:
         return redirect(url_for('login'))
     # Get the messages from the database
-    cursor = conn.cursor()
+    cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM messages')
     messages = cursor.fetchall()
     print(messages)
