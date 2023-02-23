@@ -37,6 +37,9 @@ class Login(Form):
     email=StringField('email',[validators.Length(min=5)])
     password=PasswordField('password',[validators.Length(min=5)])
 
+#ibididibididi
+#nonsensee
+
 #user login
 @app.route('/',methods=['POST','GET'])
 def login():    
