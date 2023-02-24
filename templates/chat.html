@@ -5,7 +5,7 @@
     <h1>Chat</h1>    
     {% if messages %}
       {% for item in messages %}
-        <p><b>{{ item[1] }}:</b> {{ item[2]}}</p>
+        <p><b>{{ item.name }}({{item.role}}):</b> {{ item.message}}</p>
       {% endfor %}
     {% else %}
       <p>No messages yet.</p>
