@@ -60,7 +60,8 @@ def login():
                 session['logged_in']=True
                 cur.execute("SELECT * FROM messages WHERE username='{emailid}'".format(emailid=email))
                 data=cur.fetchone()
-                session['username']=data['name']
+                session['username']=data['username']
+                session['name']=data['name']
                 session['role']=data['role']
                 # if(role=='investor' and data['status']=='no'):
                 #     error="Registration not confirmed"
@@ -78,7 +79,6 @@ def login():
 # Index endpoint (the chat room)
 @app.route('/chat')
 def chat():
-    session['username']='hi'
     # Check if a user is logged in
     if 'username' not in session:
         return redirect(url_for('login'))
@@ -86,7 +86,6 @@ def chat():
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM messages')
     messages = cursor.fetchall()
-    print(messages)
     return render_template('chat.html', messages=messages)
 
 # Send message endpoint
@@ -98,9 +97,13 @@ def send_message():
     # Get the message from the form
     message = request.form['message']
     # Insert the message into the database
-    cursor = conn.cursor()
-    cursor.execute('INSERT INTO messages (username, message) VALUES (%s, %s)', (session['username'], message))
-    conn.commit()
+    f = open("req.txt", "a")
+    cursor = mysql.connection.cursor()
+    if(session['role']=='client manager' and str(message[:13])=='Requirements:'):
+        f.write(message) 
+    cursor.execute('INSERT INTO messages (username, message, role, name) VALUES (%s, %s, %s, %s)', (session['username'], message, session['role'], session['name']))
+    mysql.connection.commit()
+    cursor.close()
     return redirect(url_for('chat'))
 
 def is_logged_in(f):
