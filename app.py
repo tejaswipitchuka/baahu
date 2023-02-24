@@ -86,7 +86,7 @@ def chat():
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM messages')
     messages = cursor.fetchall()
-    return render_template('chat.html', messages=messages)
+    return render_template('chat_app.html', messages=messages)
 
 # Send message endpoint
 @app.route('/send_message', methods=['POST'])
